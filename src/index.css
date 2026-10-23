@@ -1,0 +1,307 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+::selection {
+  color: #10231a;
+  background: #c6e7a5;
+}
+
+.portfolio-app {
+  --page: #101411;
+  --surface: #171d18;
+  --surface-raised: #1d251f;
+  --ink: #f4f2e9;
+  --muted: #b7bcb3;
+  --subtle: #8c958b;
+  --line: rgb(231 238 222 / 12%);
+  --glass: rgb(241 244 232 / 5%);
+  --accent: #c5df9b;
+  --accent-strong: #d5efad;
+  --button-ink: #162018;
+  --glow: rgb(175 207 133 / 14%);
+  color: var(--ink);
+  min-height: 100vh;
+  transition:
+    background-color 200ms ease,
+    color 200ms ease;
+}
+
+.portfolio-app.dark-mode {
+  color-scheme: dark;
+}
+
+.portfolio-app.light-mode {
+  --page: #f4f1e9;
+  --surface: #eeeae0;
+  --surface-raised: #fffdf7;
+  --ink: #202820;
+  --muted: #59645b;
+  --subtle: #778077;
+  --line: rgb(37 52 39 / 13%);
+  --glass: rgb(255 255 255 / 62%);
+  --accent: #365d42;
+  --accent-strong: #284d35;
+  --button-ink: #fbfaf5;
+  --glow: rgb(118 151 90 / 14%);
+  color-scheme: light;
+}
+
+.portfolio-app.bg-black,
+.portfolio-app .bg-black,
+.portfolio-app [class~="bg-[#050505]"] {
+  background-color: var(--surface) !important;
+}
+
+.portfolio-app .premium-section {
+  background-color: var(--surface) !important;
+}
+
+.portfolio-app .premium-section-alt {
+  background-color: var(--page) !important;
+}
+
+.portfolio-app .bg-white {
+  background-color: var(--accent) !important;
+  color: var(--button-ink) !important;
+}
+
+.portfolio-app [class*="bg-white/"] {
+  background-color: var(--glass) !important;
+}
+
+.portfolio-app [class*="bg-black/"] {
+  background-color: color-mix(in srgb, var(--surface) 91%, transparent) !important;
+}
+
+.portfolio-app .text-white,
+.portfolio-app.text-white {
+  color: var(--ink) !important;
+}
+
+.portfolio-app .text-gray-200 {
+  color: var(--muted) !important;
+}
+
+.portfolio-app .text-gray-300,
+.portfolio-app .text-gray-400 {
+  color: var(--muted) !important;
+}
+
+.portfolio-app .text-gray-500,
+.portfolio-app .text-gray-600 {
+  color: var(--subtle) !important;
+}
+
+.portfolio-app [class*="border-white/"] {
+  border-color: var(--line) !important;
+}
+
+.portfolio-app .text-green-400,
+.portfolio-app .text-green-300 {
+  color: var(--accent) !important;
+}
+
+.portfolio-app .bg-green-400,
+.portfolio-app .bg-green-500 {
+  background-color: var(--accent) !important;
+}
+
+.portfolio-app input,
+.portfolio-app textarea,
+.portfolio-app select {
+  color: var(--ink);
+  background-color: var(--glass);
+}
+
+.portfolio-app input::placeholder,
+.portfolio-app textarea::placeholder {
+  color: var(--subtle);
+}
+
+.hero-section {
+  isolation: isolate;
+  background:
+    radial-gradient(ellipse at 78% 45%, var(--glow), transparent 34%),
+    linear-gradient(115deg, var(--page), var(--surface));
+}
+
+.hero-grid {
+  z-index: -1;
+  opacity: 0.2;
+  background-image: linear-gradient(var(--line) 1px, transparent 1px),
+    linear-gradient(90deg, var(--line) 1px, transparent 1px);
+  background-position: center center;
+  background-size: 76px 76px;
+  mask-image: linear-gradient(to right, transparent, black 35%, black 85%, transparent);
+}
+
+.hero-title {
+  text-wrap: balance;
+}
+
+.premium-gradient-text {
+  color: var(--accent);
+}
+
+.profile-aura {
+  background: var(--glow);
+}
+
+.profile-frame {
+  border-color: var(--line);
+  background: var(--surface-raised);
+  box-shadow: 0 34px 100px rgb(0 0 0 / 24%);
+}
+
+.profile-note {
+  background-color: var(--surface-raised) !important;
+}
+
+.availability-pill,
+.tech-pill,
+.skill-pill,
+.premium-card,
+.premium-project-card > div,
+.contact-panel {
+  border-color: var(--line);
+  box-shadow: 0 18px 55px rgb(0 0 0 / 8%);
+}
+
+.premium-nav {
+  border-color: var(--line);
+  background-color: color-mix(in srgb, var(--page) 84%, transparent) !important;
+}
+
+.premium-nav-link::after {
+  position: absolute;
+  right: 0;
+  bottom: -8px;
+  left: 0;
+  height: 1px;
+  content: "";
+  background: var(--accent);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 220ms ease;
+}
+
+.premium-nav-link:hover::after,
+.premium-nav-link:focus-visible::after {
+  transform: scaleX(1);
+}
+
+.section-kicker {
+  color: var(--accent) !important;
+}
+
+.section-title {
+  letter-spacing: -0.045em;
+  text-wrap: balance;
+}
+
+.premium-section {
+  border-top: 1px solid var(--line);
+}
+
+.premium-card,
+.premium-project-card > div,
+.contact-panel {
+  background-color: var(--surface-raised) !important;
+}
+
+.premium-card:hover,
+.premium-project-card:hover {
+  box-shadow: 0 28px 80px rgb(0 0 0 / 16%);
+}
+
+.premium-contact {
+  background:
+    radial-gradient(ellipse at 92% 80%, var(--glow), transparent 36%),
+    var(--surface) !important;
+}
+
+.contact-details-panel {
+  background-color: var(--page);
+}
+
+.premium-button {
+  box-shadow: 0 10px 28px color-mix(in srgb, var(--accent) 16%, transparent);
+}
+
+.premium-outline-button {
+  border-color: var(--line);
+}
+
+.premium-footer {
+  background-color: var(--page) !important;
+}
+
+[data-reveal] {
+  --reveal-delay: 0ms;
+}
+
+.motion-ready [data-reveal] {
+  opacity: 0;
+  transform: translate3d(0, 24px, 0);
+  transition:
+    opacity 650ms ease var(--reveal-delay),
+    transform 650ms cubic-bezier(0.2, 0.7, 0.2, 1) var(--reveal-delay);
+}
+
+.motion-ready [data-reveal].is-visible {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+}
+
+.profile-float {
+  animation: profile-float 6s ease-in-out infinite;
+}
+
+.ambient-orb {
+  animation: ambient-drift 12s ease-in-out infinite alternate;
+}
+
+.ambient-orb-delayed {
+  animation-delay: -6s;
+}
+
+@keyframes profile-float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes ambient-drift {
+  from {
+    transform: translate3d(-12px, 8px, 0) scale(0.96);
+  }
+
+  to {
+    transform: translate3d(18px, -14px, 0) scale(1.06);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+}
