@@ -11,11 +11,11 @@ const navItems = [
 
 const Navbar = ({ isLightMode, onToggleTheme }) => {
   const [menuOpen, setMenuOpen] = useState(false);
-  const [scrolled, setScrolled] = useState(false);
+  const [scrolled, setScrolled] = useState(() => window.scrollY > 72);
 
   useEffect(() => {
     const handleScroll = () => {
-      setScrolled(window.scrollY > 20);
+      setScrolled(window.scrollY > 72);
     };
 
     window.addEventListener("scroll", handleScroll);
@@ -31,13 +31,17 @@ const Navbar = ({ isLightMode, onToggleTheme }) => {
 
   return (
     <header
-      className={`premium-nav fixed left-0 top-0 z-50 w-full transition-all duration-300 ${
+      className={`premium-nav fixed z-50 transition-all duration-300 ${
         scrolled
-          ? "border-b border-white/10 bg-black/85 shadow-lg backdrop-blur-xl"
-          : "bg-black/40 backdrop-blur-md"
+          ? "is-scrolled left-0 top-0 w-full rounded-none border-b border-white/10 bg-black/85 shadow-lg backdrop-blur-xl"
+          : "left-1/2 top-5 w-[calc(100%-2rem)] max-w-6xl -translate-x-1/2 rounded-full border border-white/10 bg-black/40 shadow-xl shadow-black/10 backdrop-blur-md"
       }`}
     >
-      <nav className="mx-auto flex max-w-7xl items-center justify-between px-5 py-4 sm:px-8 lg:px-16">
+      <nav
+        className={`mx-auto flex items-center justify-between px-5 transition-all duration-300 sm:px-8 ${
+          scrolled ? "max-w-none py-3 lg:px-10" : "max-w-7xl py-3 lg:px-10"
+        }`}
+      >
         {/* Logo */}
         <a
           href="#home"
@@ -45,7 +49,7 @@ const Navbar = ({ isLightMode, onToggleTheme }) => {
           className="group flex items-center gap-3"
         >
           <span className="brand-mark flex h-10 w-10 items-center justify-center rounded-full bg-white text-xs font-bold tracking-tight text-black transition group-hover:rotate-6">
-            R<span className="text-green-500">.</span>
+            R<span className="text-green-500">S</span>
           </span>
 
           <div className="leading-tight">
@@ -82,7 +86,7 @@ const Navbar = ({ isLightMode, onToggleTheme }) => {
           </button>
 
           <a
-            href="https://www.linkedin.com/in/mohit-sharma-9924122b2"
+            href="http://linkedin.com/in/rohit-kumar-sharma-220436345"
             target="_blank"
             rel="noopener noreferrer"
             className="rounded-full bg-white px-6 py-2.5 text-sm font-semibold text-black transition duration-300 hover:-translate-y-0.5 hover:bg-gray-200"

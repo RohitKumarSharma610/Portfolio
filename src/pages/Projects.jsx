@@ -54,7 +54,7 @@ const projects = [
     description:
       "Theme customization and layout work with careful typography, spacing and responsive behavior.",
     technologies: ["Shopify", "Liquid", "CSS"],
-    live: "https://kumiukoo.fi/",
+    live: "https://kumiukko.fi/",
   },
   {
     id: 7,

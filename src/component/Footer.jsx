@@ -25,7 +25,7 @@ const Footer = () => {
         {/* Social Links */}
         <div className="flex items-center gap-3">
           <a
-            href="https://github.com/mohitt8785"
+            href="https://github.com/RohitKumarSharma610"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Visit Rohit's GitHub profile"
@@ -35,7 +35,7 @@ const Footer = () => {
           </a>
 
           <a
-            href="https://www.linkedin.com/in/mohitsharma8785/"
+            href="http://linkedin.com/in/rohit-kumar-sharma-220436345"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Visit Rohit's LinkedIn profile"
