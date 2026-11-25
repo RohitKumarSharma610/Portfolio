@@ -31,17 +31,13 @@ const Navbar = ({ isLightMode, onToggleTheme }) => {
 
   return (
     <header
-      className={`premium-nav fixed z-50 transition-all duration-300 ${
+      className={`premium-nav fixed left-1/2 top-5 z-50 w-[calc(100%-2rem)] max-w-6xl -translate-x-1/2 rounded-full border transition-[background-color,border-color,box-shadow] duration-300 ${
         scrolled
-          ? "is-scrolled left-0 top-0 w-full rounded-none border-b border-white/10 bg-black/85 shadow-lg backdrop-blur-xl"
-          : "left-1/2 top-5 w-[calc(100%-2rem)] max-w-6xl -translate-x-1/2 rounded-full border border-white/10 bg-black/40 shadow-xl shadow-black/10 backdrop-blur-md"
+          ? "is-scrolled border-white/10 bg-black/85 shadow-lg backdrop-blur-xl"
+          : "border-white/10 bg-black/40 shadow-xl shadow-black/10 backdrop-blur-md"
       }`}
     >
-      <nav
-        className={`mx-auto flex items-center justify-between px-5 transition-all duration-300 sm:px-8 ${
-          scrolled ? "max-w-none py-3 lg:px-10" : "max-w-7xl py-3 lg:px-10"
-        }`}
-      >
+      <nav className="mx-auto flex items-center justify-between px-5 py-3 sm:px-8 lg:px-10">
         {/* Logo */}
         <a
           href="#home"
@@ -55,7 +51,7 @@ const Navbar = ({ isLightMode, onToggleTheme }) => {
           <div className="leading-tight">
             <p className="text-base font-bold text-white">Rohit Sharma</p>
             <p className="text-[11px] uppercase tracking-wider text-gray-500">
-              Shopify Developer & Web Designer
+              Web Developer
             </p>
           </div>
         </a>

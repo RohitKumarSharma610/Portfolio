@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { FaArrowUpRightFromSquare } from "react-icons/fa6";
 import About from "./About";
 import Services from "./Services";
@@ -9,6 +9,8 @@ import profileImage from "../assets/Rohit.png";
 import pdff from "../assets/Rohit_Resume.pdf";
 
 const Home = () => {
+  const [isProfileFlipped, setIsProfileFlipped] = useState(false);
+
   return (
     <>
       <main>
@@ -83,22 +85,63 @@ const Home = () => {
               <div className="profile-float relative w-full max-w-[420px]">
                 <div className="profile-aura absolute inset-5 rounded-[2rem] blur-3xl" />
 
-                <div className="profile-frame relative mx-auto h-[390px] w-[300px] overflow-hidden rounded-[2rem] border border-white/15 bg-white/5 p-2 shadow-2xl sm:h-[500px] sm:w-[380px]">
-                  <img
-                    src={profileImage}
-                    alt="Rohit Sharma - Shopify Developer and Web Designer"
-                    className="h-full w-full rounded-[1.6rem] object-cover object-top"
-                  />
-                </div>
+                <button
+                  type="button"
+                  className={`profile-flip-card relative mx-auto h-[390px] w-[300px] rounded-[2rem] sm:h-[500px] sm:w-[380px] ${
+                    isProfileFlipped ? "is-flipped" : ""
+                  }`}
+                  aria-label={
+                    isProfileFlipped
+                      ? "Show Rohit Sharma's photo"
+                      : "Show more about Rohit Sharma"
+                  }
+                  aria-pressed={isProfileFlipped}
+                  onClick={() => setIsProfileFlipped((flipped) => !flipped)}
+                >
+                  <span className="profile-flip-card-inner">
+                    <span
+                      className="profile-flip-face profile-flip-front profile-frame absolute inset-0 overflow-hidden rounded-[2rem] border border-white/15 bg-white/5 p-2 shadow-2xl"
+                      aria-hidden={isProfileFlipped}
+                    >
+                      <img
+                        src={profileImage}
+                        alt="Rohit Sharma - Shopify Developer and Web Designer"
+                        className="h-full w-full rounded-[1.6rem] object-cover object-bottom"
+                      />
+                      <span className="profile-note absolute bottom-5 left-5 rounded-2xl border border-white/15 bg-black/80 px-5 py-4 text-left shadow-xl backdrop-blur-md">
+                        <span className="block text-xs font-medium uppercase tracking-[0.16em] text-gray-400">
+                          Independent Devloper
+                        </span>
+                        <span className="mt-1 block text-lg font-semibold text-white">
+                          Rohit Sharma
+                        </span>
+                      </span>
+                    </span>
 
-                <div className="profile-note absolute -bottom-4 left-0 rounded-2xl border border-white/15 bg-black/80 px-5 py-4 shadow-xl backdrop-blur-md sm:-left-8">
-                  <p className="text-xs font-medium uppercase tracking-[0.16em] text-gray-400">
-                    Independent designer
-                  </p>
-                  <p className="mt-1 text-lg font-semibold text-white">
-                    Rohit Sharma
-                  </p>
-                </div>
+                    <span
+                      className="profile-flip-face profile-flip-back absolute inset-0 flex flex-col items-center justify-center rounded-[2rem] border border-white/15 p-8 text-center shadow-2xl sm:p-12"
+                      aria-hidden={!isProfileFlipped}
+                    >
+                      <span className="text-xs font-semibold uppercase tracking-[0.24em] text-green-400">
+                        A little about me
+                      </span>
+                      <span className="mt-5 text-3xl font-semibold tracking-tight text-white sm:text-4xl">
+                        Thoughtful design.
+                        <span className="premium-gradient-text mt-1 block">
+                          Useful experiences.
+                        </span>
+                      </span>
+                      <span className="mt-5 text-sm leading-7 text-gray-300 sm:text-base">
+                        I’m Rohit, a Shopify developer, Web Devloper and web designer. I build
+                        polished, easy-to-use storefronts with Shopify, Liquid,
+                        and React.
+                      </span>
+                      <span className="absolute bottom-8 left-1/2 -translate-x-1/2 whitespace-nowrap rounded-full border border-white/20 px-4 py-2 text-xs font-medium uppercase tracking-[0.14em] text-gray-300">
+                        Click to see my photo
+                      </span>
+                    </span>
+                  </span>
+                </button>
               </div>
             </div>
           </div>
