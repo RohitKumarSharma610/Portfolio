@@ -31,7 +31,7 @@ const Navbar = ({ isLightMode, onToggleTheme }) => {
 
   return (
     <header
-      className={`premium-nav fixed left-1/2 top-5 z-50 w-[calc(100%-2rem)] max-w-6xl -translate-x-1/2 rounded-full border transition-[background-color,border-color,box-shadow] duration-300 ${
+      className={`premium-nav fixed left-1/2 top-0 z-50 w-full max-w-none -translate-x-1/2 rounded-none border-x-0 border-t-0 transition-[background-color,border-color,box-shadow] duration-300 md:top-5 md:w-[calc(100%-2rem)] md:max-w-6xl md:rounded-full md:border-x md:border-t ${
         scrolled
           ? "is-scrolled border-white/10 bg-black/85 shadow-lg backdrop-blur-xl"
           : "border-white/10 bg-black/40 shadow-xl shadow-black/10 backdrop-blur-md"
